@@ -20,9 +20,6 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="microphone"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="151" y="247" width="100" height="106"/>
-                                </variation>
                                 <connections>
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RVd-vi-A0v"/>
                                 </connections>
@@ -33,48 +30,65 @@
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="154" y="361" width="92" height="21"/>
-                                </variation>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXY-YG-UkJ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" image="stop"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="175" y="442" width="51" height="50"/>
+                                </variation>
+                                <connections>
+                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V6H-Gi-Ef8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NQF-HF-WvD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QDW-NM-TrL"/>
+                            <constraint firstItem="NQF-HF-WvD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="QDW-NM-TrL"/>
                             <constraint firstItem="NQF-HF-WvD" firstAttribute="top" secondItem="25I-Fe-x9P" secondAttribute="bottom" constant="8" id="RXl-hi-Ec7"/>
+                            <constraint firstItem="FXY-YG-UkJ" firstAttribute="top" secondItem="25I-Fe-x9P" secondAttribute="bottom" constant="92" id="i4r-cW-CCG"/>
                             <constraint firstItem="25I-Fe-x9P" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iPB-zq-U5H"/>
                             <constraint firstItem="25I-Fe-x9P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pDA-9A-Pb6">
                                 <variation key="widthClass=compact" constant="1"/>
                             </constraint>
+                            <constraint firstItem="FXY-YG-UkJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uDs-FJ-U6Z"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="25I-Fe-x9P"/>
                                 <exclude reference="NQF-HF-WvD"/>
+                                <exclude reference="FXY-YG-UkJ"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="iPB-zq-U5H"/>
                                 <exclude reference="pDA-9A-Pb6"/>
                                 <exclude reference="QDW-NM-TrL"/>
                                 <exclude reference="RXl-hi-Ec7"/>
+                                <exclude reference="i4r-cW-CCG"/>
+                                <exclude reference="uDs-FJ-U6Z"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="25I-Fe-x9P"/>
                                 <include reference="NQF-HF-WvD"/>
+                                <include reference="FXY-YG-UkJ"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="iPB-zq-U5H"/>
                                 <include reference="pDA-9A-Pb6"/>
                                 <include reference="QDW-NM-TrL"/>
                                 <include reference="RXl-hi-Ec7"/>
+                                <include reference="i4r-cW-CCG"/>
+                                <include reference="uDs-FJ-U6Z"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="recordingLabel" destination="NQF-HF-WvD" id="W58-gp-7OJ"/>
+                        <outlet property="stopRecordingBtn" destination="FXY-YG-UkJ" id="bY5-u8-cvH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -84,5 +98,6 @@
     </scenes>
     <resources>
         <image name="microphone" width="100" height="100"/>
+        <image name="stop" width="50" height="50"/>
     </resources>
 </document>
