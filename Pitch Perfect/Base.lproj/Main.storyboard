@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tky-ag-i6l">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Record-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,15 +31,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXY-YG-UkJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXY-YG-UkJ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="stop"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="175" y="442" width="51" height="50"/>
-                                </variation>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V6H-Gi-Ef8"/>
+                                    <segue destination="Ub4-gg-IAv" kind="show" id="PcU-9Q-nI4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -64,10 +62,10 @@
                             <mask key="constraints">
                                 <exclude reference="iPB-zq-U5H"/>
                                 <exclude reference="pDA-9A-Pb6"/>
-                                <exclude reference="QDW-NM-TrL"/>
-                                <exclude reference="RXl-hi-Ec7"/>
                                 <exclude reference="i4r-cW-CCG"/>
                                 <exclude reference="uDs-FJ-U6Z"/>
+                                <exclude reference="QDW-NM-TrL"/>
+                                <exclude reference="RXl-hi-Ec7"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -79,19 +77,58 @@
                             <mask key="constraints">
                                 <include reference="iPB-zq-U5H"/>
                                 <include reference="pDA-9A-Pb6"/>
-                                <include reference="QDW-NM-TrL"/>
-                                <include reference="RXl-hi-Ec7"/>
                                 <include reference="i4r-cW-CCG"/>
                                 <include reference="uDs-FJ-U6Z"/>
+                                <include reference="QDW-NM-TrL"/>
+                                <include reference="RXl-hi-Ec7"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Record" id="wK7-sP-iWW"/>
                     <connections>
+                        <outlet property="recordButton" destination="25I-Fe-x9P" id="sin-zZ-DYO"/>
                         <outlet property="recordingLabel" destination="NQF-HF-WvD" id="W58-gp-7OJ"/>
                         <outlet property="stopRecordingBtn" destination="FXY-YG-UkJ" id="bY5-u8-cvH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1332" y="405"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pqi-Qz-VMg">
+            <objects>
+                <viewController id="Ub4-gg-IAv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bZc-i4-Smd"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sj5-pl-FOt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kPh-gb-lXO">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5uN-7m-kGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2140.5" y="405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0Lh-kF-Lde">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tky-ag-i6l" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="36C-rd-Jy5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="OyP-Ep-cxf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgi-OI-TX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="414" y="405"/>
         </scene>
